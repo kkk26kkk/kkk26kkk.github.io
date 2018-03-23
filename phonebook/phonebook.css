@@ -1,0 +1,47 @@
+body{
+    margin:0;
+}
+
+input{
+    border:1px solid black;
+    height:20px;
+    width:200px;
+    color:darkgrey;
+}
+
+input:focus{
+    color:black;
+}
+
+#main{
+    margin:auto;
+    max-width:400px;
+    min-height:200px;
+   
+}
+
+#btnSave{
+    width:90px;
+    padding:5px;
+    margin-top:5px;
+    margin-left:275px;
+    background: #ddd;
+    font-size:15px;
+    border:1px solid black;
+}
+
+#inputTable{
+    margin-left:3px;
+    width:450px;
+}
+
+#myTable{
+    margin-top:30px;
+    border:1px solid #ddd;
+    width:100%;
+}
+
+#myTable td{
+    border:1px solid #ddd;
+}
+
