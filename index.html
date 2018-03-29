@@ -3,31 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Juhyung Park</title>
+    <title>Phonebook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="phonebook.css" />
 </head>
 <body>
     <div id="main">
-        <div id="header" align="center">
-            <img src="images/logo.svg"/>
-        </div>
-        <div id="content1" align="center">            
-            <h2 id="title">Let me introduce one of my favorite artists "Friendly Fires"!!</h2>
-            <img src="images/friendlyfires.jpg"/><br/>
-            <a target="_blank" class="mylink" href="https://en.wikipedia.org/wiki/Friendly_Fires">Information about Friendly Fires</a><br/>
-        </div>
-        <div id="content2" align="center">
-            <img src="images/1st.jpg"/>&nbsp;&nbsp;
-            <img src="images/2nd.jpg"/>
-        </div>
-        <div id="content3" align="center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/tJwuWw61ji0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div id="footer" align="center">
-            <h4 id="title2">&copy;2018. JuHyung Park.</h4>
-        </div>
+        <h1>Phonebook</h1>
+        <table id="inputTable">
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="ln" placeholder="Last Name"/></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="fn" placeholder="First Name"/></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" id="pn" placeholder="Phone Number"/></td>
+            </tr>
+        </table>
+        <button id="btnSave">Save</button>
+        <input type="text" id="searchInput" placeholder="Search for Last Name."/>
+        <button id="searchBtn">Search</button>
+        <table id="myTable">
+            <tr>
+                <th onclick="tableSort(0)">&#9660 Last Name</th>
+                <th onclick="tableSort(1)">&#9660 First Name</th>
+                <th colspan="2" onclick="tableSort(2)">&#9660 Phone Number</th>
+            </tr>
+        </table>
     </div>
 </body>
+<script src="phonebook.js"></script>
 </html>
