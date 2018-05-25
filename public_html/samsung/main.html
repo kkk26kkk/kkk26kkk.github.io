@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main{
+            margin: auto;
+            width: 800px;
+            border: 1px solid #aaa;
+            padding:20px;
+            min-height:400px;
+        }
+
+        input{
+            margin: 0 5px 5px 0;
+            padding: 2px;
+            font-size:1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Products</h1>
+
+        <input type="text" id="name"><br/>
+        <input type="text" id="price"><br/>
+        <button id="save">Save</button>
+    </div>
+</body>
+<script>
+    var btn_save = document.querySelector("#save");
+
+    btn_save.onclick = function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("result").innerHTML = this.responseText;
+            }
+        }
+        
+        xhttp.open("POST", "api/products.php?", true)
+        xhttp.setRequestHeader("Content-type", applicationCache);
+
+        var name = document.querySelector("#name");
+        var price = document.querySelector("#price");
+        var pd = "name=" + name.value;
+        pd += "$price=" + price.value;
+        
+        xhttp.send(pd);
+    }
+
+</script>
+</html>

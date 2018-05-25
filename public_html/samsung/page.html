@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <p id="result"></p>
+
+    <button onclick="getData();" id="btn_get">GET REQUEST</button>
+    <button onclick="postData();" id="btn_post">POST REQUEST</button>
+</body>
+<script>
+    function getData(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("result").innerHTML = this.responseText;
+            }
+        }
+        
+        xhttp.open("GET", "api/product.php?id=1", true)
+        xhttp.send(null);
+    }
+    function postData(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("result").innerHTML = this.responseText;
+            }
+        }
+        
+        xhttp.open("POST", "api/products.php?", true)
+        xhttp.send(null);
+    }
+</script>
+</html>
