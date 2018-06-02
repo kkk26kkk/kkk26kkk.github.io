@@ -1,6 +1,10 @@
 var COUNT = 20;
 var balls =[];
 var canvas;
+var ctx;
+
+var mouseX = 0;
+var mouseY = 0;
 
 function randomColor(num) {          
     return Math.floor(Math.random() * num);
@@ -15,7 +19,18 @@ function Ball (width,height){
     this.color = "rgb(" + randomColor(255) + "," + randomColor(255) + "," + randomColor(255) + ")";
     this.x_speed = 2 + parseInt(Math.random()*5);  
     this.y_speed = this.x_speed;
+
     this.update= function(){
+        if(mouseX > 0 && mouseY > 0){
+            if(Math.abs(mouseX - this.x) < this.radius && Math.abs(mouseY - this.y) < this.radius){
+                if(this.radius < 50)
+                    this.radius += 5;
+            } else {
+                if(this.radius > 10)
+                    this.radius += -1;
+            }
+        }
+
         if(this.x>(this.width-this.radius) )
             this.x_speed = this.x_speed * -1;
         if(this.x<this.radius)
@@ -27,6 +42,15 @@ function Ball (width,height){
         if(this.y<this.radius)
             this.y_speed = this.y_speed * -1;
         this.y+=this.y_speed;
+    }
+
+    this.draw = function(ctx){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.strokeStyle = this.color;
+        ctx.stroke();
+        ctx.fillStyle = this.color;
+        ctx.fill();
     }
 }
 
@@ -62,10 +86,19 @@ incNum.addEventListener("click", function(event){
         balls.push(new Ball (canvas.width,canvas.height));
 });
 
-canvas = document.getElementById("my_canvas");
-var ctx = canvas.getContext("2d");
-
 window.onload = function() {
+
+    canvas = document.getElementById("my_canvas");
+
+    canvas.onmousemove = function(e){
+        var rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+    }
+    canvas.onmouseout = function(e){
+        mouseX = -1;
+        mouseY = -1;
+    }
     
     for(x=0; x<COUNT; x++){
         balls.push(new Ball (canvas.width,canvas.height));
@@ -74,19 +107,12 @@ window.onload = function() {
     setTimeout(movie,1000/30);
 }
 
-function draw(){
-    ctx.beginPath();
-    ctx.arc(balls[x].x, balls[x].y, balls[x].radius, 0, 2 * Math.PI);
-    ctx.strokeStyle = balls[x].color;
-    ctx.stroke();
-    ctx.fillStyle = balls[x].color;
-    ctx.fill();
-}
-
 function movie(){
+
+    ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for(x=0; x<balls.length; x++){
-        draw();
+        balls[x].draw(ctx);
         balls[x].update();
     }
     setTimeout(movie,1000/30);
