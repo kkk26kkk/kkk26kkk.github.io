@@ -1,0 +1,46 @@
+body{
+    margin:0;
+}
+
+#main{
+    margin:auto;
+    max-width:600px;
+    min-height:500px;
+}
+
+#save{
+    width: 100vw;
+    position: relative;
+    height:250px;
+    border:1px solid #000;
+    text-align: center;
+    display:table-cell; /* 세로 정렬을 위해 필요 */
+    vertical-align:middle;
+}
+
+button{
+    width:90px;
+    height:23px;
+    border:1px solid #000;
+    border-radius: 3px;
+}
+
+input{
+    margin: 0 5px 10px 0;
+    padding: 2px;
+}
+
+#list{
+    border-collapse: collapse;
+    width:100%;
+    margin-top:20px;
+}
+
+#auth_user{
+    margin-left: 100px;
+    display:inline;
+}
+
+#btn_logout{
+    float:right;
+}
