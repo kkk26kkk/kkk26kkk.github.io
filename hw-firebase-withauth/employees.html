@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employees</title>
+    <link rel="stylesheet" href="employees.css"/>
+</head>
+<body>
+    <div id="main">
+        <a href="index.html">Home</a>
+        <a href="customers.html">Customers</a>
+        <a href="employees.html">Employees</a>
+        <span id="auth_user"></span>
+        <a href="#" onclick="logout();" id="btn_logout">Logout</a>
+
+        <h1>Employees</h1>
+        <div id="save">
+            ID <input type="text" placeholder="ID" id="id"/><br/>
+            LAST NAME <input type="text" placeholder="Lastname" id="lastname"/><br/>
+            FIRST NAME <input type="text" placeholder="Firstname" id="firstname"/><br/>
+            BIRTH DAY <input type="text" placeholder="Birthday" id="birthday"/><br/>
+            POSITION <input type="text" placeholder="Position" id="position"/><br/>
+            <button id="btn_save">Save</button>
+        </div>
+
+        <table id="list" border="1">
+            <tr><th>ID</th><th>LAST NAME</th><th>FIRST NAME</th><th>BIRTHDAY</th><th>AGE</th><th>POSITION</th><th>ACTIONS</th></tr>
+        </table>
+
+    </div>
+</body>
+<script src="employees.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+</html>
