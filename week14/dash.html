@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+   
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div id="main">
+        <h3>Team</h3>
+        <select id="team">
+            <option value="C">Cavaliers</option>
+            <option value="W">Warriors</option>
+        </select>
+        <h3>Description</h3>
+        <textarea id="play" rows="5">
+
+        </textarea>
+        <h3>Points</h3>
+        <input id="point" type="text" placeholder="points"/>
+        <p>
+            <button id="save">Save</button>
+        </p>
+        <hr/>
+
+         <!-- PLAY BY PLAY TABLE -->
+         <table id="list" width="100%">
+                <tr>
+                    <td id="td_team">Team</td>
+                    <td id="td_play">Play</td>
+                    <td id="td_score" class="right-align">Score</td>
+                </tr>
+
+        </table>
+    </div>
+</body>
+<script src="dash.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+</html>
