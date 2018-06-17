@@ -1,0 +1,22 @@
+    body {
+        margin: 0;
+        background: teal;
+    }
+    
+    #main {
+        max-width: 600px;
+        background: #fff;
+        min-height: 500px;
+        margin: auto;
+        padding: 20px;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        #main {
+            background: salmon;
+        }
+    }

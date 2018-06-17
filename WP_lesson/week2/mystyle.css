@@ -1,0 +1,53 @@
+/*  mystyle.css */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+body {
+    background-color: #aaf;
+}
+
+
+/* # id 
+    . class
+*/
+
+#title1 {
+    color: #fff;
+    border: 1px solid #000;
+    font-family: Raleway;
+}
+
+.box {
+    border: 1px solid #000;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+
+.box:hover {
+    background: #000;
+}
+
+p {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.mybgorange {
+    background: #f90;
+}
+
+.mybgyellow {
+    background: yellow;
+}
+
+a {
+    border: 1px solid #fff;
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+a:hover {
+    background: yellow;
+}

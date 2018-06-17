@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main {
+            margin: auto;
+            width: 800px;
+            min-height: 400px;
+            border: 1px solid #aaa;
+            padding: 20px;
+        }
+
+        input {
+            margin: 5px 5px 5px 0;
+            padding: 2px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <p id="result"></p>
+        <h1>Products</h1>
+        <input type="text" id="name" />
+        <br/>
+        <input type="text" id="price" />
+        <br/>
+        <button id="save">Save</button>
+        <br/>
+        <br/>
+        <table id="my_table" width="500" border="1">
+            <tr><th>Name</th><th>Price</th></tr>
+        </table>
+        <p id="text"></p>
+    </div>
+</body>
+
+<script>
+
+    var button_save = document.querySelector("#save");
+
+    button_save.onclick = function () {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = this.responseText;
+                result = JSON.parse(result);
+                if (result.status) {
+                    document.getElementById("result").innerHTML = "SAVED...";
+                    var name = document.querySelector("#name");
+                    var price = document.querySelector("#price");
+                    // input 항목 초기화
+                    name.value = "";
+                    price.value = "";
+                }
+                else {
+                    document.getElementById("result").innerHTML = "NOT SAVED...";
+                }
+            }
+        }
+        xhttp.open("POST", "api/products.php", true); // true => 비동기식 수행
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        var name = document.querySelector("#name");
+        var price = document.querySelector("#price");
+        var pd = "name=" + name.value;
+        pd += "&price=" + price.value;
+        //alert(pd);
+        xhttp.send(pd);
+
+    }
+
+    var data = null;
+    function getData(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                data = this.responseText;
+                data = JSON.parse(data);
+
+                // var name = data.name;
+                // var price = data.price;
+
+                // var mytable = document.querySelector("#my_table");
+                // for(var i=0; i<data.length; i++){
+                //     var tr = document.createElement("tr");
+                //     var td1 = document.createElement("td");
+                //     var td2 = document.createElement("td");
+                //     td1.innerText = name;
+                //     td2.innerText = price;
+                //     tr.appendChild(td1);
+                //     tr.appendChild(td2);
+                //     table.appendChild(tr);
+                // }
+                document.getElementById("text").innerHTML = data;
+            }
+        }
+        xhttp.open("GET", "api/products.php?", true);
+
+        xhttp.send(null);
+    }
+
+    
+
+</script>
+
+</html>

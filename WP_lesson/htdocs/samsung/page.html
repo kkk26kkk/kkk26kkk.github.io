@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API Test</h1>    
+    <p id="result"></p>
+
+    <button onclick="getData();" id="btn_get">GET REQUEST</button>
+    <button onclick="postData();"id="btn_post">POST REQUEST</button>
+</body>
+<script>
+    function getData() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("result").innerHTML = this.responseText;
+            }
+        }
+        xhttp.open("GET", "http://maps.google.com/maps/api/geocode/json?address=Seoul", true);
+        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(null);
+    }
+    function postData(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("result").innerHTML = this.responseText;
+            }
+        }
+        xhttp.open("POST", "api/products.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id=1&name=Amy&price=10000");
+
+    }
+   
+  
+
+
+</script>
+</html>

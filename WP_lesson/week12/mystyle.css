@@ -1,0 +1,37 @@
+body{
+    background: #f90;
+}
+
+#main{
+    width:960px;
+    min-height:500px;
+    padding:25px;
+    margin:auto;
+    background:#fff;
+}
+
+.box{
+    margin:auto;
+    width:90%;
+    height:120px;
+    border:1px solid #aaa;
+}
+
+
+#mycircle1{
+    fill:#f90;
+    animation-name: kimyuna;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.17,.67,.72,.23);
+}
+
+@keyframes kimyuna{
+    50%{
+       cx:800px;
+    }
+    0%{
+        cx:30px;
+    }
+
+}
