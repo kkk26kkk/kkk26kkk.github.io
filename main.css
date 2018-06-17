@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body{
+    background-color: #000;
+}
+
+svg{  
+    width:40%;
+    height:1%;
+    margin-top:50px;
+    margin-left:600px;
+}
+
+#main{
+    margin-left:630px;
+    width:700px;
+    min-height:200px;
+    margin-bottom:600px;
+}
+
+#name{
+    margin-left:33px;
+    margin-top: 65px;
+    margin-bottom: 130px;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+#hello{
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  text-align: center;
+  font-weight: bold;
+}
+
+#candle{
+  margin-left:20px;
+  width:700px;
+  height:500px;
+}
+
+#projects{
+  margin-top:500px;
+  margin-bottom:5px;
+  padding-top:150px;
+  font-size: 45px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  font-weight: bold;
+}
+
+#projects_ex{
+  margin-top:3px;
+  font-size:15px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+}
+
+#hr_1{
+  float:left;
+  width:170px;
+  color:#f1f1f1;
+}
+
+.app{
+  margin-top:1px;
+  margin-bottom:2px;
+}
+
+.app a{
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  font-size: 25px;
+}
+
+.app a:hover{
+  color:rgb(255, 238, 0);
+}
+
+#aboutme{
+  margin-top:500px;
+  margin-bottom:5px;
+  padding-top:150px;
+  font-size: 45px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  font-weight: bold;
+}
+
+#hr_2{
+  float:left;
+  width:207px;
+  color:#f1f1f1;
+}
+
+.material-icons{
+  color:#f1f1f1;
+  font-size: 36px;  
+}
+
+.am{
+  margin-top:1px;
+  font-size:18px;
+  color: #f1f1f1;
+}
+
+.ps{
+  font-size:17px;
+  color: #f1f1f1;
+}
+
+#link{
+  margin-top:500px;
+  margin-bottom:5px;
+  padding-top:100px;
+  font-size: 45px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  font-weight: bold;
+}
+
+#hr_3{
+  float:left;
+  width:91px;
+  color:#f1f1f1;
+}
+
+.ff{
+  text-align: center;
+  width:300px;
+  height:200px;
+}
+
+#ff_2{
+  margin-left: 30px;
+}
+
+.ff_ex{
+  font-size: 26px;
+  font-family: 'Open Sans', sans-serif;
+  color:#f1f1f1;
+  font-weight: bold;
+}
+
+.ff_ex a{
+  text-decoration: none;
+  color:#f1f1f1;
+}
+
+.ff_ex a:hover{
+  color:rgb(255, 238, 0);
+}
+
+iframe{
+  margin-left:30px;
+}
+
+
+
+
+
+
+
+
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #222; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    margin-left:30px;
+    margin-right:30px;
+    padding: 6px 8px 6px 5px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1f1f1;
+    display: block;
+    
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+path{
+    stroke:#f1f1f1;
+    fill: #f1f1f1;
+    stroke-dasharray:750;
+    opacity:10;
+    animation:animate 8s infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity:0;
+        fill:none;
+        stroke-dashoffset:750;
+    }
+    30%{
+        opacity:10;
+        fill:none;
+        stroke-dashoffset:750;
+    }
+    90%{
+        fill:rgba(255,255,255,0);
+    }
+    100%{
+        opacity:10;
+        fill:#f1f1f1;
+        stroke-dashoffset: 0;
+    }
+}
