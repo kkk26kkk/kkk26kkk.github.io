@@ -9,11 +9,11 @@ svg{
     width:40%;
     height:1%;
     margin-top:50px;
-    margin-left:600px;
+    margin-left:565px;
 }
 
 #main{
-    margin-left:630px;
+    margin-left:595px;
     width:700px;
     min-height:200px;
     margin-bottom:600px;
@@ -160,30 +160,20 @@ iframe{
   margin-left:30px;
 }
 
-
-
-
-
-
-
-
-
-
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 250px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%; 
+    width: 250px;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
     left: 0;
-    background-color: #222; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #222; 
+    overflow-x: hidden; 
     padding-top: 20px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 }
 
-/* The navigation menu links */
 .sidenav a {
     margin-left:30px;
     margin-right:30px;
@@ -195,7 +185,6 @@ iframe{
     
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
     color: #000;
     background-color: #f1f1f1;
